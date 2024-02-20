@@ -22,7 +22,8 @@ Catatan :
 3) Deadline pengumpulan tugas hari Senin minggu berikutnya jam 13:00 WIB (commmit terakhir di github masing-masing)
 
 
-## Tugas 1 
+## Tugas 1
+Referensi : Topik 1 Sejarah OS
 1. Apa hubungan antara perangkat lunak aplikasi dan sistem operasi?
 2. Apa yang dimaksud dengan sistem operasi? Apakah itu perangkat keras atau perangkat lunak?
 3. Sebutkan fungsi utama suatu sistem operasi!
@@ -38,3 +39,9 @@ Catatan :
 13. Berapakah masa komputer generasi kelima dan bandingkan inovasi dari generasi sebelumnya?
 14. Apa perbedaan antara perangkat keras dan perangkat lunak?
 15. Apa perbedaan antara perangkat lunak sistem dan perangkat lunak aplikasi?
+
+## Tugas 2
+Referensi : Topik 2 Cara Kerja dan Fungsi Sistem Operasi.
+
+**TUGAS BACA UNTUK PERSIAPAN PERTEMUAN MINGGU DEPAN !**
+
