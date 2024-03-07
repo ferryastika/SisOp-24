@@ -44,4 +44,8 @@ Referensi : Topik 1 Sejarah OS
 Referensi : Topik 2 Cara Kerja dan Fungsi Sistem Operasi.
 
 **TUGAS BACA UNTUK PERSIAPAN PERTEMUAN MINGGU DEPAN !**
+## Tugas 3
+1. Buatlah presentasi langkah demi langkah tentang siklus CPU (fetch,decode,execute) utk mengeksekusi sebuah program. Jelaskan juga peran dari Bahasa pemrograman dan compiler, begitu juga dengan peran dari Sistem Operaso. Gunakan referensi : [Video referensi 1](https://www.youtube.com/watch?v=Z5JC9Ve1sfI) dan [Video referensi 2](https://www.youtube.com/watch?v=jFDMZpkUWCw)
+2. Baca dan pahami rangkuman materi OS: [Materi Intro to OS-01](https://github.com/ferryastika/OS-01)
+3. Jalankan VM Debian anda, lalu lakukan clone https://github.com/ferryastika/flops-iops. Compile dan eksekusi sesuai petunjuk. Catat hasilnya dan jelaskan arti daro hasil ekskusi. Lakukan sebanyak 5 kali. Bandingkan hasilnya anatar temanmu. Buat Plot perbandinnga hasil untuk masing-masing PC di tiap kelompokmu. Analisa hasil tpercobaan tadi  dan beri kesimpulah                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 
