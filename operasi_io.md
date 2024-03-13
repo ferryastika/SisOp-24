@@ -5,7 +5,7 @@
 ̧ Pipeline
 ̧ Redirection
 ```
-## TUJUAN BELAJAR:
+## TUJUAN PEMBELAJARAN:
 
 Setelah mempelajari materi dalam bab ini, mahasiswa diharapkan mampu:
 * Memahami konsep proses I/O dan redirection
@@ -120,10 +120,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    ```
 
 3. Input nama direktori, output tidak ada (membuat direktori baru), bila terjadi error maka tampilan error pada layar (standard error)
-```
+   ```
    $ mkdir mydir
    $ mkdir mydir (Terdapat pesan error)
-```
+   ```
 
 ## Percobaan 2 : Pembelokan (redirection)
 1. Pembelokan standar output
@@ -144,39 +144,39 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
   ```
 4. Notasi 2>&1 : pembelokan standar error (2>) adalah identik dengan file descriptor 1.
   ```
-       $ ls filebaru (Terdapat pesan error)
-       $ ls filebaru 2> out.txt
-       $ cat out.txt
-       $ ls filebaru 2> out.txt 2>&
-       $ cat out.txt
-   ```
+    $ ls filebaru (Terdapat pesan error)
+    $ ls filebaru 2> out.txt
+    $ cat out.txt
+    $ ls filebaru 2> out.txt 2>&
+    $ cat out.txt
+  ```
 5. Notasi 1>&2 (atau >&2) : pembelokan standar output adalah sama dengan file descriptor 2 yaitu standar error
    ```
-       $ echo “mencoba menulis file” 1> baru
-       $ cat filebaru 2> baru 1>&
-       $ cat baru
+   $ echo “mencoba menulis file” 1> baru
+   $ cat filebaru 2> baru 1>&
+   $ cat baru
    ```
 6. Notasi >> (append)
    ```
-    $ echo “kata pertama” > surat
-    $ echo “kata kedua” >> surat
-    $ echo “kata ketiga” >> surat
-    $ cat surat
-    $ echo “kata keempat” > surat
-    $ cat surat
+   $ echo “kata pertama” > surat
+   $ echo “kata kedua” >> surat
+   $ echo “kata ketiga” >> surat
+   $ cat surat
+   $ echo “kata keempat” > surat
+   $ cat surat
    ```
 7. Notasi here document (<<++ .... ++) digunakan sebagai pembatas input dari keyboard. Perhatikan bahwa tanda pembatas dapat digantikan dengan tanda apa saja, namun harus sama dan tanda penutup harus diberikan pada awal baris
   ```
    $ cat <<++
-       Hallo, apa kabar?
-       Baik-baik saja?
-       Ok!
-       ++
+   Hallo, apa kabar?
+   Baik-baik saja?
+   Ok!
+   ++
    $ cat <<%%%
-       Hallo, apa kabar?
-       Baik-baik saja?
-       Ok!
-       %%%
+   Hallo, apa kabar?
+   Baik-baik saja?
+   Ok!
+   %%%
   ```
 8. Notasi – (input keyboard) adalah representan input dari keyboard. Artinya menampilkan file 1, kemudian menampilkan input dari keyboard dan menampilkan file 2. Perhatikan bahwa notasi “-“ berarti menyelipkan input dari keyboard
   ```
@@ -187,63 +187,46 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
 
 1. Operator pipa (|) digunakan untuk membuat eksekusi proses dengan melewati data langsung ke data lainnya.
    ```
-       $ who
-       $ who | sort
-       $ who | sort –r
-       $ who > tmp
-       $ sort tmp
-       $ rm tmp
-       $ ls –l /etc | more
-       $ ls –l /etc | sort | more
-   ``
-2. Untuk membelokkan standart output ke file, digunakan operator >
+   $ who
+   $ who | sort
+   $ who | sort –r
+   $ who > tmp
+   $ sort tmp
+   $ rm tmp
+   $ ls –l /etc | more
+   $ ls –l /etc | sort | more
+   ```
+2. Untuk membelokkan standart output ke file, digunakan operator ">"
   ```
   $ echo hello
   $ echo hello > output
   $ cat output
   ```
-3. Untuk menambahkan output ke file digunakan operator >>
+3. Untuk menambahkan output ke file digunakan operator ">>"
    ```
-    $ echo bye >> output
-    $ cat output
-  ```
-4. Untuk membelokkan standart input digunakan operator <
+   $ echo bye >> output
+   $ cat output
+   ```
+4. Untuk membelokkan standart input digunakan operator "<"
   ```
   $ cat < output
   ```
 5. Pembelokan standart input dan standart output dapat dikombinasikan tetapi tidak boleh menggunakan nama file yang sama sebagai standart input dan output.
   ```
-    $ cat < output > out
-    $ cat out
-    $ cat < output >> out
-    $ cat out
-    $ cat < output > output
-    $ cat output
-    $ cat < out >> out (Proses tidak berhenti)
-    [Ctrl-c]
-    $ cat out
+  $ cat < output > out
+  $ cat out
+  $ cat < output >> out
+  $ cat out
+  $ cat < output > output
+  $ cat output
+  $ cat < out >> out (Proses tidak berhenti)
+  [Ctrl-c]
+  $ cat out
   ```
 
 ## Percobaan 4 : Filter
-
-## LATIHAN:
-
-1. Lihat daftar secara lengkap pada direktori aktif, belokkan tampilan standard output
-    ke file baru.
-2. Lihat daftar secara lengkap pada direktori /etc/passwd, belokkan tampilan
-    standard output ke file baru tanpa menghapus file baru sebelumnya.
-3. Urutkan file baru dengan cara membelokkan standard input.
-4. Urutkan file baru dengan cara membelokkan standard input dan standard output ke
-    file baru.urut.
-5. Buatlah direktori latihan 2 sebanyak 2 kali dan belokkan standard error ke file
-    rmdirerror.txt.
-6. Urutkan kalimat berikut :
-    Jakarta
-    Bandung
-    Surabaya
-    Padang
-2. Pipa juga digunakan untuk mengkombinasikan utilitas sistem untuk membentuk
-fungsi yang lebih kompleks
+1. Pipa juga digunakan untuk mengkombinasikan utilitas sistem untuk membentuk fungsi yang lebih kompleks
+```
 $ w –h | grep <user>
 $ grep <user> /etc/passwd
 $ ls /etc | wc
@@ -264,18 +247,29 @@ Muchlis
 $ cat kelas1.txt kelas2.txt | sort
 $ cat kelas1.txt kelas2.txt > kelas.txt
 $ cat kelas.txt | sort | uniq
-
-
-### 17
-
 ```
-Palembang
-Lampung
-Dengan menggunakan notasi here document (<@@@ ...@@@)
-```
-7. Hitung jumlah baris, kata dan karakter dari file baru.urut dengan menggunakan
-    filter dan tambahkan data tersebut ke file baru.
+
+## LATIHAN:
+
+1. Lihat daftar secara lengkap pada direktori aktif, belokkan tampilan standard output   ke file baru.
+2. Lihat daftar secara lengkap pada direktori /etc/passwd, belokkan tampilan standard output ke file baru tanpa menghapus file baru sebelumnya.
+3. Urutkan file baru dengan cara membelokkan standard input.
+4. Urutkan file baru dengan cara membelokkan standard input dan standard output ke file baru.urut.
+5. Buatlah direktori latihan 2 sebanyak 2 kali dan belokkan standard error ke file rmdirerror.txt.
+6. Urutkan kalimat berikut :
+  ```
+   Jakarta
+   Bandung
+   Surabaya
+   Padang
+   Palembang
+   Lampung
+  ```
+  Dengan menggunakan notasi here document (<@@@ ...@@@)
+
+7. Hitung jumlah baris, kata dan karakter dari file baru.urut dengan menggunakan filter dan tambahkan data tersebut ke file baru.
 8. Gunakan perintah di bawah ini dan perhatikan hasilnya.
+   ```
     $ cat > hello.txt
     dog cat
     cat duck
@@ -286,10 +280,9 @@ Dengan menggunakan notasi here document (<@@@ ...@@@)
     [Ctrl-d]
     $ cat hello.txt | sort | uniq
     $ cat hello.txt | grep “dog” | grep –v “cat”
-
+   ```
 ## LAPORAN RESMI:
 
-1. Analisa hasil percobaan 1 sampai dengan 4, untuk setiap perintah jelaskan
-    tampilannya.
+1. Analisa hasil percobaan 1 sampai dengan 4, untuk setiap perintah jelaskan    tampilannya.
 2. Kerjakan latihan diatas dan analisa hasilnya
 3. Berikan kesimpulan dari praktikum ini.
