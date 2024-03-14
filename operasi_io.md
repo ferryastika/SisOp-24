@@ -38,7 +38,7 @@ Linux berkomunikasi dengan file melalui file descriptor yang direpresentasikan m
 
 Linux tidak membedakan antara peralatan hardware dan file. Linux memanipulasi peralatan hardware dengan memperlakukannya sama dengan ketika memperlakukan sebuah file.
 
-##3.PEMBELOKAN (REDIRECTION)
+## 3.PEMBELOKAN (REDIRECTION)
 
 Pembelokan dilakukan untuk standard input, output dan error, yaitu untuk mengalihkan file descriptor dari 0, 1 dan 2. Simbol untuk pembelokan adalah :
 ```mermaid
