@@ -51,4 +51,4 @@ Referensi : Topik 2 Cara Kerja dan Fungsi Sistem Operasi.
 4. Apabila Debian VM mu masih belum terdapat packeage gcc, make dan git, lakukan instalasi dan catat setiap langkahnya!
 
 ## Tugas 4
-Belajar tentang shell programming dengan konsep input, process dan output. Kerjakan praktikum di link ini : 
+Belajar tentang shell programming dengan konsep input, process dan output. Kerjakan praktikum di link [ini]( https://github.com/ferryastika/SisOp-24/blob/main/operasi_io.md)
