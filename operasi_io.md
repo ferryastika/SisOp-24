@@ -1,18 +1,17 @@
-## Operasi Input Output
-
+# Operasi Input Output
+Referensi : [Shell Programming](https://www.geeksforgeeks.org/introduction-linux-shell-shell-scripting/?ref=shm_)
 ## POKOK BAHASAN:
 ```
-̧ Pipeline
-̧ Redirection
+* Pipeline
+* Redirection
 ```
 ## TUJUAN PEMBELAJARAN:
-
 Setelah mempelajari materi dalam bab ini, mahasiswa diharapkan mampu:
 * Memahami konsep proses I/O dan redirection
 * Memahami standar input, output dan error
 * Menggunakan notasi output, append dan here document
-* Memahami konsep PIPE dan filter
-
+* Memahami konsep *PIPE* dan filter
+  
 ## DASAR TEORI:
 
 ### 1. PROSES I/O
@@ -40,9 +39,7 @@ Linux berkomunikasi dengan file melalui file descriptor yang direpresentasikan m
 Linux tidak membedakan antara peralatan hardware dan file. Linux memanipulasi peralatan hardware dengan memperlakukannya sama dengan ketika memperlakukan sebuah file.
 
 ##3.PEMBELOKAN (REDIRECTION)
-
 Pembelokan dilakukan untuk standard input, output dan error, yaitu untuk mengalihkan file descriptor dari 0, 1 dan 2. Simbol untuk pembelokan adalah :
-
 ```mermaid
 flowchart LR
     A(Standart Input) -->|Keyboard| B{Process}
@@ -57,35 +54,30 @@ Mekanisme pipa digunakan sebagai alat komunikasi antar proses.
 graph LR
   A(Input) --> B(Proses-1) --> C(Output) --> D(Input) --> E(Proses-2) --> F(Output)
 ```
-
-Proses 1 menghasilkan output yang selanjutnya digunakan sebagai input oleh
-Proses 2. Hubungan output input ini dinamakan pipa, yang menghubngkan Proses 1
-dengan Proses2 dan dinyatakan dengan symbol “|”.
-
+Proses-1 menghasilkan output yang selanjutnya digunakan sebagai input oleh Proses-2. Hubungan output input ini dinamakan ``pipa ataiupipelining``, yang menghubungkan Proses-1 dengan Proses-2 dan dinyatakan dengan symbol “|”.
 ```
-Proses1 | Proses
+    Proses1 | Proses
 ```
 
 ## 5. FILTER
-
 Filter adalah utilitas Linux yang dapat memproses standard input (dari keyboard) dan menampilkan hasilnya pada standard output (layar). Contoh filter adalah cat, sort, grep, pr, head, tail, paste dan lainnya.
 Pada sebuah rangkaian pipa : 
 
-P<sub>1</sub> | P<sub>2</sub> | P<sub>3</sub> ... | P<sub>n-1</sub> | P<sub>n</sub>
+        P<sub>1</sub> | P<sub>2</sub> | P<sub>3</sub> ... | P<sub>n-1</sub> | P<sub>n</sub>
 
 Maka P2 sampai dengan P<sub>n-1</sub> berfungsi sebagai filter. P1 (awal) dan Pn (terakhir) boleh tidak filter. Utilitas yang bukan filter misalnya who, ls, ps, lp, lpr, mail dan lainnya.
 Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
-* Perintah "grep"
-    Digunakan untuk menyaring masukannya dan menampilkan baris-baris yang hanya mengandung pola yang ditentukan. Pola ini disebut regular expression.
-* Perintah "wc"
-    Digunakan untuk menghitung jumlah baris, kata dan karakter dari baris-baris masukan yang diberikan kepadanya. Untuk mengetahui berapa baris gunakan option –l, untuk mengetahui berapa kata, gunakan option –w dan untuk mengetahui berapa karakter, gunakan option –c. Jika salah satu option tidak digunakan, maka
-    tampilannya adalah jumlah baris, jumlah kata dan jumlah karakter.
-* Perintah "sort"
-    Digunakan untuk mengurutkan masukannya berdasarkan urutan nomor ASCII dari karakter.
-* Perintah "cut"
-    Digunakan untuk mengambil kolom tertentu dari baris-baris masukannya, yang ditentukan pada option –c.
-* Perintah "uniq"
-    Digunakan untuk menghilangkan baris-baris berurutan yang mengalami duplikasi, biasanya digabungkan dalam pipeline dengan sort.
+* Perintah ``grep``
+  Digunakan untuk menyaring masukannya dan menampilkan baris-baris yang hanya mengandung pola yang ditentukan. Pola ini disebut regular expression.
+* Perintah ``wc``
+  Digunakan untuk menghitung jumlah baris, kata dan karakter dari baris-baris masukan yang diberikan kepadanya. Untuk mengetahui berapa baris gunakan option –l, untuk mengetahui berapa kata, gunakan option –w dan untuk mengetahui berapa karakter, gunakan option –c. 
+  Jika salah satu option tidak digunakan, maka tampilannya adalah jumlah baris, jumlah kata dan jumlah karakter.
+* Perintah ``sort``
+  Digunakan untuk mengurutkan masukannya berdasarkan urutan nomor ASCII dari karakter.
+* Perintah ``cut``
+  Digunakan untuk mengambil kolom tertentu dari baris-baris masukannya, yang ditentukan pada option –c.
+* Perintah ``uniq``
+  Digunakan untuk menghilangkan baris-baris berurutan yang mengalami duplikasi, biasanya digabungkan dalam pipeline dengan ``sort``.
 
 ## TUGAS PENDAHULUAN:
 
@@ -122,34 +114,34 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
 3. Input nama direktori, output tidak ada (membuat direktori baru), bila terjadi error maka tampilan error pada layar (standard error)
    ```
    $ mkdir mydir
-   $ mkdir mydir (Terdapat pesan error)
+   $ mkdir mydir **(Terdapat pesan error)**
    ```
 
 ## Percobaan 2 : Pembelokan (redirection)
 1. Pembelokan standar output
-  ```
+   ```
     $ cat 1> myfile.txt
     Ini adalah teks yang saya simpan ke file myfile.txt
-  ```
+   ```
 2. Pembelokan standar input, yaitu input dibelokkan dari keyboard menjadi dari file
-  ```
+   ```
     $ cat 0< myfile.txt
     $ cat myfile.txt
-  ```
+   ```
 3. Pembelokan standar error untuk disimpan di file
-  ```
+   ```
     $ mkdir mydir (Terdapat pesan error)
     $ mkdir mydir 2> myerror.txt
     $ cat myerror.txt
-  ```
+   ```
 4. Notasi 2>&1 : pembelokan standar error (2>) adalah identik dengan file descriptor 1.
-  ```
+   ```
     $ ls filebaru (Terdapat pesan error)
     $ ls filebaru 2> out.txt
     $ cat out.txt
     $ ls filebaru 2> out.txt 2>&
     $ cat out.txt
-  ```
+   ```
 5. Notasi 1>&2 (atau >&2) : pembelokan standar output adalah sama dengan file descriptor 2 yaitu standar error
    ```
    $ echo “mencoba menulis file” 1> baru
@@ -166,7 +158,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    $ cat surat
    ```
 7. Notasi here document (<<++ .... ++) digunakan sebagai pembatas input dari keyboard. Perhatikan bahwa tanda pembatas dapat digantikan dengan tanda apa saja, namun harus sama dan tanda penutup harus diberikan pada awal baris
-  ```
+   ```
    $ cat <<++
    Hallo, apa kabar?
    Baik-baik saja?
@@ -177,7 +169,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Baik-baik saja?
    Ok!
    %%%
-  ```
+   ```
 8. Notasi – (input keyboard) adalah representan input dari keyboard. Artinya menampilkan file 1, kemudian menampilkan input dari keyboard dan menampilkan file 2. Perhatikan bahwa notasi “-“ berarti menyelipkan input dari keyboard
   ```
   $ cat myfile.txt – surat
@@ -197,57 +189,57 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    $ ls –l /etc | sort | more
    ```
 2. Untuk membelokkan standart output ke file, digunakan operator ">"
-  ```
-  $ echo hello
-  $ echo hello > output
-  $ cat output
-  ```
+   ```
+   $ echo hello
+   $ echo hello > output
+   $ cat output
+   ```
 3. Untuk menambahkan output ke file digunakan operator ">>"
    ```
    $ echo bye >> output
    $ cat output
    ```
 4. Untuk membelokkan standart input digunakan operator "<"
-  ```
-  $ cat < output
-  ```
+   ```
+   $ cat < output
+   ```
 5. Pembelokan standart input dan standart output dapat dikombinasikan tetapi tidak boleh menggunakan nama file yang sama sebagai standart input dan output.
-  ```
-  $ cat < output > out
-  $ cat out
-  $ cat < output >> out
-  $ cat out
-  $ cat < output > output
-  $ cat output
-  $ cat < out >> out (Proses tidak berhenti)
-  [Ctrl-c]
-  $ cat out
-  ```
+   ```
+   $ cat < output > out
+   $ cat out
+   $ cat < output >> out
+   $ cat out
+   $ cat < output > output
+   $ cat output
+   $ cat < out >> out (Proses tidak berhenti)
+   [Ctrl-c]
+   $ cat out
+   ```
 
 ## Percobaan 4 : Filter
 1. Pipa juga digunakan untuk mengkombinasikan utilitas sistem untuk membentuk fungsi yang lebih kompleks
-```
-$ w –h | grep <user>
-$ grep <user> /etc/passwd
-$ ls /etc | wc
-$ ls /etc | wc –l
-$ cat > kelas1.txt
-Badu
-Zulkifli
-Yulizir
-Yudi
-Ade
-[Ctrl-d]
-$ cat > kelas2.txt
-Budi
-Gama
-Asep
-Muchlis
-[Ctrl-d]
-$ cat kelas1.txt kelas2.txt | sort
-$ cat kelas1.txt kelas2.txt > kelas.txt
-$ cat kelas.txt | sort | uniq
-```
+   ```
+    $ w –h | grep <user>
+    $ grep <user> /etc/passwd
+    $ ls /etc | wc
+    $ ls /etc | wc –l
+    $ cat > kelas1.txt
+    Badu
+    Zulkifli
+    Yulizir
+    Yudi
+    Ade
+    [Ctrl-d]
+    $ cat > kelas2.txt
+    Budi
+    Gama
+    Asep
+    Muchlis
+    [Ctrl-d]
+    $ cat kelas1.txt kelas2.txt | sort
+    $ cat kelas1.txt kelas2.txt > kelas.txt
+    $ cat kelas.txt | sort | uniq
+   ```
 
 ## LATIHAN:
 
@@ -257,15 +249,16 @@ $ cat kelas.txt | sort | uniq
 4. Urutkan file baru dengan cara membelokkan standard input dan standard output ke file baru.urut.
 5. Buatlah direktori latihan 2 sebanyak 2 kali dan belokkan standard error ke file rmdirerror.txt.
 6. Urutkan kalimat berikut :
-  ```
+   ```
    Jakarta
    Bandung
    Surabaya
    Padang
    Palembang
    Lampung
-  ```
-  Dengan menggunakan notasi here document (<@@@ ...@@@)
+   ```
+  Dengan menggunakan notasi **here document (<@@@ ...@@@)** . [HINT](https://www.geeksforgeeks.org/how-to-use-here-document-in-bash-programming/)
+  
 
 7. Hitung jumlah baris, kata dan karakter dari file baru.urut dengan menggunakan filter dan tambahkan data tersebut ke file baru.
 8. Gunakan perintah di bawah ini dan perhatikan hasilnya.
