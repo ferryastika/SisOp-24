@@ -52,3 +52,7 @@ Referensi : Topik 2 Cara Kerja dan Fungsi Sistem Operasi.
 
 ## Tugas 4
 Belajar tentang shell programming dengan konsep input, process dan output. Kerjakan praktikum di link [ini]( https://github.com/ferryastika/SisOp-24/blob/main/operasi_io.md)
+
+## Tugas 5
+1. Kerjakan modul Pertemuan5.pdf dan Pertemuan6.pdf ! (file ada di ethol). Untuk kode program silahkan unduh di  primes.c dan yes.c
+2. Jelaskan tentang run level yang ada di Debian OS ! 
