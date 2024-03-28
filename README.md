@@ -56,3 +56,4 @@ Belajar tentang shell programming dengan konsep input, process dan output. Kerja
 ## Tugas 5
 1. Kerjakan modul Pertemuan5.pdf dan Pertemuan6.pdf ! (file ada di ethol). Untuk kode program silahkan unduh di  [primes.c](https://github.com/ferryastika/SisOp-24/blob/main/primes.c) dan [yes.c](https://github.com/ferryastika/SisOp-24/blob/main/yes.c)
 2. Jelaskan tentang run level yang ada di Debian OS ! 
+Referensi : materi tentang Proses di ethol.
